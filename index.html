@@ -3,194 +3,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>서해·인천권역 야간 출입 금지 탄원</title>
-    <!-- Tailwind CSS CDN -->
+    <title>서해 어민 생존권 사수: 행정심판 탄원 서명</title>
+    <!-- 폰트: Gmarket Sans (제목), Pretendard (본문) -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/gmarket-sans-font@1.0.0/css/GmarketSans.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts (Inter & Noto Sans KR) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Noto Sans KR을 기본 글꼴로, Inter를 보조로 사용 */
-        body {
-            font-family: 'Inter', 'Noto Sans KR', sans-serif;
-            scroll-behavior: smooth;
+        /* 폰트 정의 */
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: #000000;
+            color: #e5e7eb; /* text-gray-200 */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            word-break: keep-all; 
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'GmarketSansMedium', 'Pretendard', sans-serif;
+            font-weight: 700; 
         }
         
-        /* 히어로 섹션 배경 이미지 설정 */
-        .hero-bg {
-            /* [수정됨] 사용자가 제공한 GitHub 이미지 URL로 경로를 변경했습니다. */
-            background-image: url('https://raw.githubusercontent.com/khia221107/khia/refs/heads/main/image/1000020864.jpg');
+        /* [이미지 수정] 영문 프롬프트로 URL 변경 */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            /* [이미지 수정] "A bleak, desolate, dark mudflat at low tide, dramatic gray sky, monochrome style" */
+            background-image: url('https://image.pollinations.ai/prompt/A%20bleak,%20desolate,%20dark%20mudflat%20at%20low%20tide,%20dramatic%20gray%20sky,%20monochrome%20style');
             background-size: cover;
             background-position: center;
         }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.60);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 1.5rem;
+        }
+        .hero-scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+            40% { transform: translate(-50%, -15px); }
+            60% { transform: translate(-50%, -5px); }
+        }
+
+        /* 강조 색상 및 버튼 스타일 */
+        :root { --accent-red: #D94040; }
+        .accent-color { color: var(--accent-red); }
+        .bg-accent { background-color: var(--accent-red); }
+        
+        .button-primary {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: white;
+            padding: 0.875rem 2.5rem;
+            border-radius: 9999px;
+            font-family: 'GmarketSansMedium', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(217, 64, 64, 0.3);
+        }
+        .button-primary:hover {
+            background-color: #b93030;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(217, 64, 64, 0.4);
+        }
+        
+        .button-secondary-dark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #374151; /* bg-gray-700 */
+            color: #f3f4f6; /* text-gray-100 */
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-family: 'Pretendard', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid #4b5563; /* border-gray-600 */
+        }
+        .button-secondary-dark:hover {
+            background-color: #4b5563; /* bg-gray-600 */
+            color: white;
+        }
+
+        .cta-sticky-bar {
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(17, 24, 39, 0.98); 
+            backdrop-filter: blur(8px);
+            border-top: 1px solid #374151; /* border-gray-700 */
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            z-index: 40;
+        }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-200">
+<body class="bg-black">
 
-    <!-- 히어로 섹션 -->
-    <header class="hero-bg relative w-full min-h-[70vh] md:min-h-[80vh] flex flex-col items-center justify-center text-center p-4">
-        <!-- 어두운 오버레이 -->
-        <div class="absolute inset-0 bg-black/70"></div>
-        
-        <!-- 히어로 콘텐츠 -->
-        <div class="relative z-10 p-6 md:p-8 rounded-lg">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 shadow-lg">
-                어둠 속의 바다, 우리의 권리는 어디에 있습니까?
+    <!-- 1. 히어로 섹션 (새 영문 프롬프트 이미지 적용) -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold mb-4 leading-tight">
+                서해의 <span style="color: #FF6B6B;">절규</span>,
+                <br>어민의 <span style="color: #FFD166;">생존권</span>을 지켜주세요
             </h1>
-            <p class="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                평택해양경찰서의 서해·인천권역 해역 야간 출입 금지 조치에 대한
-                탄원 서명을 촉구합니다.
+            <p class="text-lg sm:text-xl lg:text-2xl font-light text-gray-200 mb-10 max-w-3xl mx-auto">
+                평택해양경찰의 '서해권역 출입금지 조치' 행정심판을 위한
+                <br class="hidden sm:block">
+                국민 탄원 서명운동에 동참해주세요.
             </p>
-            <a href="#petition" class="mt-10 inline-block bg-white text-gray-900 font-bold py-3 px-8 rounded-md text-lg hover:bg-gray-200 transition duration-300 ease-in-out shadow-lg">
-                탄원 서명하기
+            <a href="#sign-section" class="button-primary">
+                지금 바로 탄원 서명하기
             </a>
         </div>
-    </header>
+        <div class="hero-scroll-down text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+        </div>
+    </section>
 
-    <!-- 메인 콘텐츠 -->
-    <main class="max-w-4xl mx-auto p-6 md:p-10">
-
-        <!-- 문제 제기 섹션 -->
-        <section class="mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 border-b-2 border-gray-700 pb-3">
-                무엇이 문제입니까?
+    <!-- 2. 탄원의 이유 -->
+    <section class="py-20 sm:py-28 bg-black">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-heading mb-6 text-white">
+                우리의 바다가 사라지고 있습니다
             </h2>
-            <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
-                <p>
-                    최근 평택해양경찰서가 발표한 '서해·인천권역 해역 야간 출입 금지' 조치는
-                    수십 년간 바다를 삶의 터전으로 삼아온 어민들과 해양 레저 종사자들의 생계를
-                    정면으로 위협하고 있습니다.
-                </p>
-                <p>
-                    '안전'이라는 명분 하에 이루어진 이 조치는 현장의 목소리를 외면한 채,
-                    충분한 소통이나 현실적인 대안 검토 없이 일방적으로 결정되었습니다.
-                    이는 단순한 불편을 넘어, 생존권에 대한 심각한 침해입니다.
-                </EMBED>
-                <p>
-                    우리는 무조건적인 반대를 하는 것이 아닙니다. 안전 조치는 필요합니다.
-                    하지만 그 방식은 현장의 목소리를 반영하고, 모두가 상생할 수 있는
-                    합리적인 방향이어야 합니다.
-                </p>
-                <p class="font-bold text-white text-xl mt-6">
-                    일방적인 통제가 아닌, 실질적인 안전 대책과 상생 방안 마련을 촉구합니다.
-                    여러분의 목소리가 절실히 필요합니다.
-                </p>
-            </div>
-        </section>
-
-        <!-- 탄원 서명 섹션 -->
-        <section id="petition" class="bg-gray-800 p-6 md:p-10 rounded-lg shadow-2xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
-                탄원 서명에 동참하기
-            </h2>
-            <p class="text-center text-gray-400 mb-8 max-w-2xl mx-auto">
-                이 조치가 철회되고, 합리적인 대안이 마련될 수 있도록 힘을 모아주십시오.
-                여러분의 소중한 정보는 본 탄원 목적 외에는 절대 사용되지 않습니다.
+            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+                해당 조치는 수십 년간 바다와 함께 살아온 어민들의 삶의 터전을 하루아침에 빼앗는 일입니다.
+                이는 단순한 규제가 아닌, 생존에 대한 직접적인 위협입니다.
+                우리는 이 부당한 조치에 맞서 공식적인 행정심판을 청구했으며,
+                여러분의 서명은 이 싸움에 가장 강력한 힘이 됩니다.
             </p>
+        </div>
+    </section>
+
+    <!-- 3. 이미지 + 텍스트 교차 섹션 (새 영문 프롬프트 이미지 적용) -->
+    <section class="py-20 sm:py-28 bg-black">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <!-- [이미지 수정] 영문 프롬프트로 URL 변경 -->
+            <div class="rounded-lg overflow-hidden shadow-2xl">
+                <!-- [이미지 수정] "An abandoned fishing boat stranded on a vast, empty mudflat, black and white, sense of despair" -->
+                <img src="https://image.pollinations.ai/prompt/An%20abandoned%20fishing%20boat%20stranded%20on%20a%20vast,%20empty%20mudflat,%20black%20and%20white,%20sense%20of%20despair" 
+                     alt="물이 빠져나간 갯벌 위의 어선" class="w-full h-full object-cover">
+            </div>
+            <div class="text-left">
+                <h3 class="text-3xl sm:text-4xl font-heading mb-6 text-white">
+                    멈춰버린 배,
+                    <br>무너지는 삶
+                </h3>
+                <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                    출입이 금지된 바다는 어민들에게 사형 선고와 같습니다. 
+                    배는 갯벌 위에 멈춰 섰고, 수많은 가정의 생계가 막막해졌습니다.
+                    이곳에서 나고 자란 이들의 희망이 절망으로 바뀌지 않도록,
+                    여러분의 목소리를 더해주세요.
+                </p>
+                <div class="flex items-center space-x-3 text-sm font-semibold text-blue-300 bg-gray-800 p-4 rounded-lg border border-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                    </svg>
+                    <span>본 서명은 행정심판 제출용으로만 사용되며, 닉네임 외 개인정보는 일체 비공개 처리됩니다.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 4. 실시간 서명 현황 -->
+    <section class="py-20 sm:py-28 text-center bg-black">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-heading mb-12 text-white">
+                함께 만드는 변화: <span class="accent-color">실시간 탄원 현황</span>
+            </h2>
             
-            <!-- 서명 폼 -->
-            <form id="petition-form" class="space-y-6 max-w-lg mx-auto">
-                <div>
-                    <label for="name" class="block text-sm font-medium text-gray-300 mb-2">성명</label>
-                    <input type="text" id="name" name="name" required
-                           class="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500"
-                           placeholder="홍길동">
-                </div>
-                <div>
-                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">이메일 주소 (선택)</label>
-                    <input type="email" id="email" name="email"
-                           class="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500"
-                           placeholder="example@email.com">
-                </div>
-                <div>
-                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">응원 및 반대 의견 (선택)</label>
-                    <textarea id="message" name="message" rows="4"
-                              class="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500"
-                              placeholder="여러분의 의견을 자유롭게 남겨주세요..."></textarea>
-                </div>
-                
-                <!-- 동의 체크박스 -->
-                <div class="flex items-center">
-                    <input id="agree" name="agree" type="checkbox" required
-                           class="h-5 w-5 rounded border-gray-600 bg-gray-700 text-blue-600 focus:ring-blue-500 cursor-pointer">
-                    <label for="agree" class="ml-3 block text-base text-gray-300">
-                        본 탄원의 취지에 동의하며 서명합니다.
-                    </label>
-                </div>
-                
-                <!-- 제출 버튼 -->
-                <div>
-                    <button type="submit"
-                            class="w-full bg-blue-700 text-white font-bold text-lg py-3 px-6 rounded-md hover:bg-blue-800 transition duration-300 ease-in-out transform hover:-translate-y-1 shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-gray-800">
-                        탄원 서명 동의
-                    </button>
-                </div>
-            </form>
-            
-            <!-- 폼 제출 결과 메시지 영역 -->
-            <div id="form-message" class="mt-6 text-center text-lg"></div>
-        </section>
+            <div id="signature-status" class="bg-gray-900 p-6 sm:p-10 rounded-xl shadow-inner border border-gray-800 min-h-[220px] flex flex-col justify-center">
+                <iframe 
+                    id="live-data-iframe"
+                    src="[여기에 Google Apps Script 웹 앱 URL 삽입]" 
+                    frameborder="0" 
+                    class="w-full h-56 rounded-lg"
+                    title="실시간 서명 현황 데이터"
+                    scrolling="no"
+                    style="background-color: transparent;">
+                    <div style="font-family: 'Pretendard', sans-serif; text-align: center; color: #6b7280; padding-top: 4rem;">
+                        데이터를 불러오는 중입니다...
+                    </div>
+                </iframe>
+            </div>
+        </div>
+    </section>
 
-    </main>
+    <!-- 5. 최종 CTA 섹션 -->
+    <section id="sign-section" class="py-20 sm:py-28 bg-gray-900 text-white text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-heading mb-6">
+                지금, 당신의 이름이 필요합니다
+            </h2>
+            <p class="text-lg sm:text-xl text-gray-300 mb-10 leading-relaxed">
+                단 1분의 참여가 서해 어민들에게는 평생의 희망이 됩니다.
+                <br>
+                우리의 바다를 지키는 일에 동참해주세요.
+            </p>
+            <a href="[서명 링크 URL 삽입]" target="_blank" class="button-primary">
+                서해 어민 생존권 탄원하기
+            </a>
+        </div>
+    </section>
 
-    <!-- 푸터 -->
-    <footer class="bg-gray-950 text-gray-500 text-center p-8 mt-16">
-        <p class="text-sm">&copy; 2025 서해·인천권역 해역 야간 출입 금지 대책 위원회 (가칭)</p>
-        <p class="text-xs mt-1">본 웹사이트는 탄원 서명 촉구를 위해 제작되었습니다.</p>
-    </footer>
+    <!-- 스티키 CTA 바 -->
+    <div class="cta-sticky-bar">
+        <div class="max-w-5xl mx-auto flex justify-between items-center px-4 sm:px-6">
+            <div class="hidden sm:block">
+                <p class="text-sm font-semibold text-gray-200">우리의 바다를 지켜주세요</p>
+                <p class="text-xs text-gray-400">여러분의 서명이 큰 힘이 됩니다.</p>
+            </div>
+            <div class="flex w-full sm:w-auto space-x-3">
+                <a id="sign-button-sticky" href="[서명 링크 URL 삽입]" target="_blank" class="button-primary flex-1 sm:flex-none py-3 px-6 text-base sm:text-lg">
+                    탄원 서명하기
+                </a>
+                <button id="share-button-sticky" onclick="handleShare()" class="button-secondary-dark flex-1 sm:flex-none py-3 px-5 text-base">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12s-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.368a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                    </svg>
+                    공유하기
+                </button>
+            </div>
+        </div>
+    </div>
 
-    <!-- 폼 제출 처리 스크립트 -->
+    <!-- 참여 완료 모달 -->
+    <div id="thankyou-modal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-[100] p-4">
+        <div class="bg-gray-900 border border-gray-700 p-8 rounded-lg shadow-2xl max-w-sm w-full text-center transform scale-100 transition-transform duration-300">
+            <h3 class="text-3xl font-heading text-green-400 mb-3">참여 완료! 감사합니다.</h3>
+            <p id="motivational-message" class="text-xl font-semibold text-gray-300 mb-6 font-body">
+                <!-- JS에 의해 동적 메시지 삽입 예정 -->
+            </p>
+            <button onclick="handleShareFromModal()" class="w-full py-3 bg-yellow-400 text-gray-900 text-lg font-bold rounded-lg hover:bg-yellow-500 transition duration-300 shadow-md font-heading">
+                <span class="tracking-wide">이 절실함을 널리 알려주세요! (공유)</span>
+            </button>
+            <button onclick="document.getElementById('thankyou-modal').classList.add('hidden')" class="mt-3 text-sm text-gray-400 hover:text-gray-200 font-body">
+                닫기
+            </button>
+        </div>
+    </div>
+
+    <!-- 스크립트 (변경 없음) -->
     <script>
-        const form = document.getElementById('petition-form');
-        const messageDiv = document.getElementById('form-message');
+        const motivationalMessages = [
+            "여러분의 한 표가 우리 바다의 희망입니다. 서명 후 꼭 주변에 알려주세요!",
+            "나도 서명했습니다! 함께해주세요. 우리의 절실함이 행정심판을 움직입니다.",
+            "바다의 울림이 여기까지 전해집니다. 이 소식을 공유해 힘을 합쳐주세요.",
+            "작은 참여가 모여 큰 변화를 만듭니다. 공유하기 버튼을 눌러 확산시켜 주세요!",
+            "여러분의 용기 있는 목소리가 서해 어민들의 생존권을 지킵니다. 감사합니다.",
+        ];
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // 실제 폼 전송 방지
+        const alertBox = {
+            show: (message) => {
+                const existing = document.getElementById('custom-alert');
+                if(existing) existing.remove();
+                const alertHtml = `
+                    <div id="custom-alert" style="font-family: 'Pretendard', sans-serif;" class="fixed top-0 left-1/2 -translate-x-1.2 mt-4 max-w-md w-full bg-gray-900 border-l-4 border-indigo-400 shadow-xl rounded-lg p-4 z-[200] transition-opacity duration-300 opacity-100" role="alert">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 pt-1">
+                                <svg class="h-6 w-6 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="ml-3 w-full">
+                                <p class="text-sm font-medium text-gray-200 mb-2 font-heading">캠페인 안내</p>
+                                <p class="text-sm text-gray-400 whitespace-pre-line">${message}</p>
+                                <button onclick="document.getElementById('custom-alert').remove()" class="mt-3 inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    확인
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                document.body.insertAdjacentHTML('beforeend', alertHtml);
+            }
+        };
 
-            const nameInput = document.getElementById('name');
-            const agreeCheckbox = document.getElementById('agree');
+        function handleShare() {
+            const CAMPAIGN_URL = "https://sites.google.com/view/hansuhyeop-campaign"; // [중요] 실제 구글 사이트 주소
+            const text = encodeURIComponent("🚨[긴급 탄원] 평택해경 출입금지 조치 철회 행정심판 서명운동! 서해 어민 생존권 사수에 힘을 보태주세요. " + CAMPAIGN_URL);
+            const kakaoUrl = "kakaotalk://send?text=" + text;
             
-            // 이름 값 확인
-            const name = nameInput.value.trim();
-            if (!name) {
-                messageDiv.innerHTML = `<p class="text-red-400 font-bold">성명을 입력해주세요.</p>`;
-                nameInput.focus();
-                return;
+            if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) {
+                window.top.location.href = kakaoUrl;
+            } else {
+                alertBox.show("카카오톡 앱이 설치된 모바일 기기에서 '공유하기' 버튼을 누르시면 더욱 편리합니다.\n\n[데스크톱] 아래 메시지를 복사하여 공유해주세요:\n" + decodeURIComponent(text));
             }
+        }
 
-            // 동의 여부 확인
-            if (!agreeCheckbox.checked) {
-                messageDiv.innerHTML = `<p class="text-red-400 font-bold">탄원 취지에 동의해주셔야 서명이 가능합니다.</p>`;
-                agreeCheckbox.focus();
-                return;
-            }
+        function handleShareFromModal() {
+            document.getElementById('thankyou-modal').classList.add('hidden');
+            handleShare();
+        }
 
-            // 성공 메시지 표시 (시뮬레이션)
-            // 'alert' 대신 'messageDiv'에 메시지 표시
-            messageDiv.innerHTML = `<p class="text-green-400 font-bold">${escapeHTML(name)}님, 소중한 의견 감사합니다. 서명이 완료되었습니다.</p>`;
-
-            // 폼 초기화
-            form.reset();
-
-            // 5초 후에 메시지 숨기기
+        document.getElementById('sign-button-sticky').addEventListener('click', (e) => {
+            const randomIndex = Math.floor(Math.random() * motivationalMessages.length);
+            document.getElementById('motivational-message').textContent = motivationalMessages[randomIndex];
+            const modal = document.getElementById('thankyou-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
             setTimeout(() => {
-                messageDiv.innerHTML = '';
+                modal.classList.add('hidden');
             }, 5000);
         });
-
-        // 간단한 HTML 이스케이프 함수 (XSS 방지)
-        function escapeHTML(str) {
-            return str.replace(/[&<>"']/g, function(match) {
-                return {
-                    '&': '&amp;',
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    '"': '&quot;',
-                    "'": '&#39;'
-                }[match];
-            });
-        }
     </script>
-
 </body>
 </html>
 
